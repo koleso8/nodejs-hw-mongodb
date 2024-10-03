@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import pino from 'pino-http';
 import { env } from './src/utils/env.js';
-import { contactId, contacts } from './src/routers/routers.js';
 import {
   contactByIdController,
   contactsController,
@@ -34,9 +33,9 @@ export const setupServer = () => {
     console.log(`Server is running on port ${PORT}`);
   });
 
-  app.get(contacts, contactsController);
+  app.get('/contacts', contactsController);
 
-  app.get(contactId, contactByIdController);
+  app.get('/contacts/:contactId', contactByIdController);
 
   app.use('*', (req, res, next) => {
     res.status(404).json({

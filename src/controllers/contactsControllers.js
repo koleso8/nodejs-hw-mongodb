@@ -12,11 +12,13 @@ export const contactByIdController = async (req, res) => {
   const contact = await getContactById(contactId);
 
   if (!contact) {
-    res.status(404).json({ message: 'Contact not found' });
-    return;
+    return res
+      .status(404)
+      .json({ message: `Contact with id:${contactId} not found` });
+  } else {
+    res.status(200).json({
+      message: `Successfully found contact with id ${contactId}!`,
+      data: contact,
+    });
   }
-  res.status(200).json({
-    message: `Successfully found contact with id ${contactId}!`,
-    data: contact,
-  });
 };
