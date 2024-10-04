@@ -11,7 +11,6 @@ export const contactsController = async (req, res) => {
   res.status(200).json({
     message: 'Successfully found contacts!',
     data: contacts,
-    body: req.body,
   });
 };
 
