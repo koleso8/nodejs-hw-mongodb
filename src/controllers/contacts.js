@@ -31,7 +31,7 @@ export const contactByIdController = async (req, res) => {
 };
 
 export const createContactController = async (req, res) => {
-  const contact = await createContact(req.query);
+  const contact = await createContact(req.body);
 
   res.status(201).json({
     status: 201,
@@ -54,7 +54,7 @@ export const deleteContactController = async (req, res, next) => {
 export const patchContactController = async (req, res, next) => {
   const { contactId } = req.params;
 
-  const result = await patchContact(contactId, req.query);
+  const result = await patchContact(contactId, req.body);
 
   if (!result) {
     next(createHttpError(404, 'Student not found !'));

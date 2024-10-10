@@ -22,12 +22,15 @@ export const deleteContact = async contactId => {
   return contact;
 };
 
-export const patchContact = async (contactId, payload, options = {}) => {
+export const patchContact = async (contactId, payload) => {
   const result = await ContactsCollection.findOneAndUpdate(
     {
       _id: contactId,
     },
-    payload
+    payload,
+    {
+      new: true,
+    }
   );
 
   if (!result) return null;
