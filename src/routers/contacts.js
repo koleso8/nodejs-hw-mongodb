@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import * as controllers from '../controllers/contacts.js';
+import * as validation from '../validation/contacts.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { validateBody } from '../middlewares/validateBody.js';
-import * as validation from '../validation/contacts.js';
 import { isValidId } from '../middlewares/isValidId.js';
 
 const router = Router();
