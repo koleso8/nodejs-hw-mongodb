@@ -5,10 +5,13 @@ import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { validateBody } from '../middlewares/validateBody.js';
 import { isValidId } from '../middlewares/isValidId.js';
 import { authenticate } from '../middlewares/authenticate.js';
+import { userContacts } from '../middlewares/userContacts.js';
 
 const contactsRouter = Router();
 
 contactsRouter.use(authenticate);
+
+contactsRouter.use(userContacts);
 
 contactsRouter.get('/', ctrlWrapper(controllers.contactsController));
 
