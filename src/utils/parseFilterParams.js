@@ -16,13 +16,23 @@ const parseFavorite = isFavourite => {
   const isBoolean = isFavourite => [true, false].includes(isFavourite);
   if (isBoolean(isFavourite)) return isFavourite;
 };
-export const parseFilterParams = query => {
-  const { type, isFavourite } = query;
 
+const parseUserId = id => {
+  const isString = typeof id === 'string';
+  if (!isString) return;
+
+  return id;
+};
+
+export const parseFilterParams = query => {
+  const { type, isFavourite, userId } = query;
+
+  const parsedUserId = parseUserId(userId);
   const parsedContactType = parseContactType(type);
   const parsedIsFavourite = parseFavorite(isFavourite);
 
   return {
+    userId: parsedUserId,
     type: parsedContactType,
     isFavourite: parsedIsFavourite,
   };
