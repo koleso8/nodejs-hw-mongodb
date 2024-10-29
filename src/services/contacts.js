@@ -12,7 +12,6 @@ export const getAllContacts = async ({
 }) => {
   const limit = perPage;
   const skip = (page - 1) * perPage;
-  console.log(userId);
 
   const contactsQuery = ContactsCollection.find();
 
@@ -51,8 +50,12 @@ export const getContactById = async contactId => {
   return contact;
 };
 
-export const createContact = async (payload, userId) => {
-  const contact = await ContactsCollection.create({ ...payload, userId });
+export const createContact = async (payload, userId, photoUrl) => {
+  const contact = await ContactsCollection.create({
+    ...payload,
+    userId,
+    photo: photoUrl,
+  });
   return contact;
 };
 
