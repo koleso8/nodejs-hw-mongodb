@@ -30,7 +30,9 @@
   "paths": {
     "/contacts": {
       "get": {
-        "tags": ["Contacts"],
+        "tags": [
+          "Contacts"
+        ],
         "summary": "Get list of Contacts",
         "operationId": "getContacts",
         "description": "Get list of contact with this endpoint",
@@ -70,7 +72,10 @@
             "name": "sortOrder",
             "schema": {
               "type": "string",
-              "enum": ["asc", "desc"],
+              "enum": [
+                "asc",
+                "desc"
+              ],
               "example": "asc"
             }
           },
@@ -87,7 +92,11 @@
             "name": "contactType",
             "schema": {
               "type": "string",
-              "enum": ["work", "home", "personal"],
+              "enum": [
+                "work",
+                "home",
+                "personal"
+              ],
               "example": "work"
             }
           }
@@ -99,7 +108,11 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": ["status", "message", "data"],
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -164,7 +177,9 @@
         }
       },
       "post": {
-        "tags": ["Contacts"],
+        "tags": [
+          "Contacts"
+        ],
         "summary": "Create contact",
         "operationId": "createContacts",
         "description": "Create a contact with payload",
@@ -187,41 +202,46 @@
                   "userId",
                   "photo"
                 ],
-                "properties": null,
-                "name": {
-                  "description": "Contact's name",
-                  "type": "string",
-                  "example": "John Doe"
-                },
-                "phoneNumber": {
-                  "description": "Phone number",
-                  "type": "string",
-                  "example": "+380-54-1524-5"
-                },
-                "contactType": {
-                  "description": "Contact type",
-                  "type": "string",
-                  "enum": ["work", "home", "personal"]
-                },
-                "email": {
-                  "description": "Contact email address",
-                  "type": "string",
-                  "example": "JohnDoe@mail.com"
-                },
-                "isFavourite": {
-                  "description": "favorite",
-                  "type": "boolean",
-                  "example": false
-                },
-                "userId": {
-                  "description": "User id",
-                  "type": "string",
-                  "example": "65e4decdd286b30065d54af9"
-                },
-                "photo": {
-                  "description": "Link to student's photo",
-                  "type": "string",
-                  "format": "binary"
+                "properties": {
+                  "name": {
+                    "description": "Contact's name",
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "phoneNumber": {
+                    "description": "Phone number",
+                    "type": "string",
+                    "example": "+380-54-1524-5"
+                  },
+                  "contactType": {
+                    "description": "Contact type",
+                    "type": "string",
+                    "enum": [
+                      "work",
+                      "home",
+                      "personal"
+                    ]
+                  },
+                  "email": {
+                    "description": "Contact email address",
+                    "type": "string",
+                    "example": "JohnDoe@mail.com"
+                  },
+                  "isFavourite": {
+                    "description": "favorite",
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "userId": {
+                    "description": "User id",
+                    "type": "string",
+                    "example": "65e4decdd286b30065d54af9"
+                  },
+                  "photo": {
+                    "description": "Link to student's photo",
+                    "type": "string",
+                    "format": "binary"
+                  }
                 }
               }
             }
@@ -234,7 +254,11 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": ["status", "message", "data"],
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -261,7 +285,9 @@
     },
     "/contacts/{id}": {
       "get": {
-        "tags": ["Contacts"],
+        "tags": [
+          "Contacts"
+        ],
         "summary": "Get Contact by id",
         "operationId": "getContact",
         "description": "Get contact by id",
@@ -288,7 +314,11 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": ["status", "message", "data"],
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -353,7 +383,11 @@
           "contactType": {
             "description": "Contact type",
             "type": "string",
-            "enum": ["work", "home", "personal"]
+            "enum": [
+              "work",
+              "home",
+              "personal"
+            ]
           },
           "email": {
             "description": "Contact email address",
@@ -385,7 +419,11 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": ["status", "message", "data"],
+              "required": [
+                "status",
+                "message",
+                "data"
+              ],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -397,7 +435,9 @@
                 },
                 "data": {
                   "type": "object",
-                  "required": ["message"],
+                  "required": [
+                    "message"
+                  ],
                   "properties": {
                     "message": {
                       "type": "string",
